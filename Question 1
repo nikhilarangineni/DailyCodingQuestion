@@ -1,0 +1,39 @@
+/*Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+Bonus: Can you do this in one pass?*/
+
+using System;
+using System.Collections.Generic;
+  
+class GFG
+{
+static void printpairs(int []arr,
+                       int sum)
+// using hashset makes it easier to search
+{  	
+    HashSet<int> s = new HashSet<int>();
+    for (int i = 0; i < arr.Length; ++i)
+    {
+        int temp = sum - arr[i];
+  
+        // checking the condition
+        if (temp >= 0 && s.Contains(temp))
+        {
+            Console.Write("Pair with given sum " +
+                          sum + " is (" + arr[i] +
+                               ", " + temp + ")");
+        }
+        s.Add(arr[i]);
+    }
+}
+  
+// Driver Code
+static void Main ()
+{
+    int []A = new int[]{1, 4, 45, 
+                        6, 10, 8};
+    int n = 16;
+    printpairs(A, n);
+}
+} 
+
