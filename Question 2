@@ -1,7 +1,7 @@
 /* Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
 */
 
- using System; 
+    using System; 
     public class productArray    
     /* Function to print product array 
     for a given array arr[] of size n */
