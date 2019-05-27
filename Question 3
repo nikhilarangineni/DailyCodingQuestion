@@ -1,0 +1,64 @@
+
+using System; 
+using System.Linq; 
+  
+class arrayNum  
+{ 
+    static int solution(int[] A)  
+    { 
+        //Our original array 
+  
+        int m = A.Max(); //Storing for the maximum value 
+          
+        // If all the values in the given array are negative 
+        if (m < 1)  
+        { 
+            return 1; 
+        } 
+        if (A.Length == 1)  
+        { 
+  
+            //If the array contains only one element 
+            if (A[0] == 1)  
+            { 
+                return 2; 
+            }  
+            else 
+            { 
+                return 1; 
+            } 
+        } 
+        int i = 0; 
+        int[] l = new int[m]; 
+        for (i = 0; i < A.Length; i++) 
+        { 
+            if (A[i] > 0)  
+            { 
+                //Changing the value status at the index of the list 
+                if (l[A[i] - 1] != 1)  
+                { 
+                    l[A[i] - 1] = 1; 
+                } 
+            } 
+        } 
+          
+        //Encountering first 0, i.e, the element with least value 
+        for (i = 0; i < l.Length; i++)  
+        { 
+            if (l[i] == 0)  
+            { 
+                return i + 1; 
+            } 
+        } 
+          
+        //If all the values of the array are filled between 1 and m 
+        return i + 2; 
+    } 
+  
+    // Driver code 
+    public static void Main() 
+    { 
+        int []A = {0, 10, 2, -10, -20}; 
+        Console.WriteLine(solution(A)); 
+    } 
+} 
