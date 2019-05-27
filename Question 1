@@ -5,7 +5,7 @@ Bonus: Can you do this in one pass?*/
 using System;
 using System.Collections.Generic;
   
-class GFG
+class arrayAdd
 {
 static void printpairs(int []arr,
                        int sum)
